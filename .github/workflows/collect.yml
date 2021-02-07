@@ -1,8 +1,7 @@
 name: collect
-#on:
-#  schedule:
-#    - cron: '*/10 * * * *'
-on: push
+on:
+  schedule:
+    - cron: '0 14 */7 * *'
 jobs:
   collect_info:
     runs-on: ubuntu-18.04
