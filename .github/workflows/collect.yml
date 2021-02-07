@@ -1,11 +1,12 @@
 name: collect
 on:
   schedule:
-    - cron: '45 * * * *'
+    - cron: '56 * * * *'
 jobs:
   collect_info:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Fetch info
         run: |
           curl -L -o history.json https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${{ secrets.STEAM_APIKEY }}&steamid=${{ secrets.STEAM_ID }}&include_appinfo=1
