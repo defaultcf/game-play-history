@@ -9,8 +9,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Fetch info
         env:
-          - STEAM_APIKEY: ${{ secrets.STEAM_APIKEY }}
-          - STEAM_ID: ${{ secrets.STEAM_ID }}
+          STEAM_APIKEY: ${{ secrets.STEAM_APIKEY }}
+          STEAM_ID: ${{ secrets.STEAM_ID }}
         run: |
           curl -L -o history.json https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_APIKEY}&steamid=${STEAM_ID}&include_appinfo=1
       - name: Commit
