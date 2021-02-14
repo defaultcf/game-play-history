@@ -14,5 +14,5 @@ jobs:
           STEAM_ID: ${{ secrets.STEAM_ID }}
         run: |
           curl "https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_APIKEY}&steamid=${STEAM_ID}&include_appinfo=1" | jq .response.games > src/data/history.json
-      - name: Commit
-        uses: stefanzweifel/git-auto-commit-action@v4
+      #- name: Commit
+      #  uses: stefanzweifel/git-auto-commit-action@v4
