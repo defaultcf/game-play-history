@@ -8,9 +8,6 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: |
-          sudo apt install jq
       - name: Fetch info
         env:
           STEAM_APIKEY: ${{ secrets.STEAM_APIKEY }}
